@@ -1,5 +1,7 @@
 # Thesis template
 
+🇳🇴 [Norsk versjon](README.no.md)
+
 A ready-to-write LaTeX thesis. Appendix A in the PDF shows how to write
 equations, theorems, references, citations, tables, algorithms and code.
 
@@ -34,7 +36,8 @@ Save your progress with the **Source Control** tab: write a message, **Commit**,
 ## 4. Optional: connect Overleaf
 
 Overleaf can sync with your GitHub repository, so you can edit in either place.
-This needs Overleaf Premium or an institutional licence (many universities provide one).
+This needs Overleaf Premium. NTNU students get it free: sign in to Overleaf with your NTNU account
+(**Log in** → **Log in through your institution**).
 
 1. In Overleaf: **Account Settings** → **Integrations** → link **GitHub**.
 2. **New Project** → **Import from GitHub** → pick your repository.
