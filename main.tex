@@ -12,12 +12,12 @@
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
 
-\frontchapter{Abstract}
+\frontchapter{\abstractname}
 \input{frontmatter/abstract}
 % \input{frontmatter/preface}
 \tableofcontents
 \input{frontmatter/notation}
-\printnoidxglossary[type=\acronymtype,title={Acronyms}]
+\printnoidxglossary[type=\acronymtype,title={\acronymsname}]
 
 \clearpage
 \pagenumbering{arabic}
@@ -29,12 +29,12 @@
 \input{chapters/05-discussion}
 \input{chapters/06-conclusion}
 
-\printbibliography[heading=bibintoc,title={Bibliography}]
+\printbibliography[heading=bibintoc]
 
 \appendix
 \input{appendices/latex-examples}
 % \input{appendices/supplementary}
 
-\printnoidxglossary[type=main,title={Technical glossary}]
+\printnoidxglossary[type=main,title={\termsname}]
 
 \end{document}

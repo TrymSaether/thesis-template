@@ -90,6 +90,23 @@
 \Crefname{lstlisting}{Listing}{Listings}
 \numberwithin{equation}{chapter}
 
+% Headings not translated by babel. Add a branch for another language.
+\AtBeginDocument{%
+  \iflanguage{norsk}{%
+    \newcommand{\symbolsname}{Symboler og notasjon}%
+    \newcommand{\acronymsname}{Forkortelser}%
+    \newcommand{\termsname}{Ordliste}%
+  }{\iflanguage{nynorsk}{%
+    \newcommand{\symbolsname}{Symbol og notasjon}%
+    \newcommand{\acronymsname}{Forkortingar}%
+    \newcommand{\termsname}{Ordliste}%
+  }{%
+    \newcommand{\symbolsname}{List of Symbols and Notation}%
+    \newcommand{\acronymsname}{Acronyms}%
+    \newcommand{\termsname}{Technical glossary}%
+  }}%
+}
+
 % Unnumbered chapter with a contents entry and correct running heading.
 \newcommand{\frontchapter}[1]{%
   \chapter*{#1}\phantomsection

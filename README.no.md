@@ -27,7 +27,7 @@ Installasjonen er stor og tar 30–60 minutter. Start datamaskinen på nytt ette
    (logg inn på GitHub når du blir spurt).
 2. Åpne den klonede mappen når VS Code spør.
 3. Klikk **Install** når VS Code foreslår de anbefalte utvidelsene
-   (LaTeX Workshop, LTeX+ stavekontroll, EditorConfig).
+   (LaTeX Workshop, EditorConfig).
 4. Åpne `main.tex` og lagre. PDF-en åpnes i en fane ved siden av.
 
 Alt annet (byggeoppsett, mappe for utdata, formatering) er allerede satt opp i `.vscode/`.

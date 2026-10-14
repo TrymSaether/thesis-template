@@ -27,7 +27,7 @@ The install is large and takes 30–60 minutes. Restart your computer afterwards
    (sign in to GitHub when asked).
 2. Open the cloned folder when VS Code asks.
 3. Click **Install** when VS Code suggests the recommended extensions
-   (LaTeX Workshop, LTeX+ spell checker, EditorConfig).
+   (LaTeX Workshop, EditorConfig).
 4. Open `main.tex` and save it. The PDF opens in a tab next to it.
 
 Everything else (build recipe, output folder, formatting) is already configured in `.vscode/`.

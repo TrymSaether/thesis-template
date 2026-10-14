@@ -68,15 +68,6 @@
   "latex-workshop.message.warning.show": false,
   "latex-workshop.synctex.afterBuild.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
-  "ltex.language": "en-GB",
-  "ltex.latex.commands": {
-    "\\gls{}": "dummy",
-    "\\Gls{}": "dummy",
-    "\\cref{}": "dummy",
-    "\\Cref{}": "dummy",
-    "\\autocite{}": "dummy",
-    "\\textcite{}": "dummy"
-  },
   "search.exclude": {
     "**/build": true
   }
