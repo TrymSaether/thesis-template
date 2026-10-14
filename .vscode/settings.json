@@ -21,10 +21,6 @@
   "latex-workshop.chktex.enabled": true,
   "latex-workshop.chktex.run": "onSave",
   "latex-workshop.formatting.latex": "latexindent",
-  "latex-workshop.formatting.latexindent.args": [
-    "-l=%WORKSPACE_FOLDER%/.latexindent.yaml",
-    "%TMPFILE%"
-  ],
   "latex-workshop.latex.autoBuild.interval": 2000,
   "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.autoClean.run": "never",
