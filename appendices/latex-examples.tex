@@ -1,0 +1,109 @@
+% !TEX root = ../main.tex
+\chapter{LaTeX examples}
+\label{app:examples}
+This appendix demonstrates the scaffold's conventions. It is illustrative
+material, not a claim about the thesis research. Remove it when writing.
+
+\section{Equations and definitions}
+Let \(x\in\R^n\) be an unknown vector and
+\(p\in\mathcal P\subseteq\R^m\) a parameter vector. Consider
+\begin{equation}
+  F(x,p)=0,\qquad F:\R^n\times\mathcal P\longrightarrow\R^n.
+  \label{eq:residual}
+\end{equation}
+The \gls{residual} \(F\) measures the mismatch in the equations.
+Its \gls{jacobian} with respect to \(x\) is written \(F_x\).
+\Cref{eq:residual} defines an implicit problem.
+
+\begin{definition}[Euclidean norm]
+  \label{def:norm}
+  For \(x\in\R^n\), the Euclidean norm is
+  \[
+    \norm{x}=\sqrt{\inner{x}{x}}=\left(\sum_{i=1}^{n}x_i^2\right)^{1/2}.
+  \]
+\end{definition}
+
+\begin{proposition}[Zero norm]
+  \label{prop:zero-norm}
+  For \(x\in\R^n\), \(\norm{x}=0\) if and only if \(x=0\).
+\end{proposition}
+\begin{proof}
+  If \(\norm{x}=0\), then \(\sum_i x_i^2=0\).
+  Every summand is nonnegative, so each \(x_i^2=0\) and hence \(x=0\).
+  Conversely, substitution of \(x=0\) in \cref{def:norm} gives \(\norm{x}=0\).
+\end{proof}
+
+\begin{remark}
+  \label{rem:scaling}
+  A small residual alone does not guarantee a small error in the unknown.
+  The relationship depends on conditioning and the scales of the equations.
+\end{remark}
+The environments share a chapter counter; \cref{prop:zero-norm,rem:scaling}
+illustrate references to different statement types.
+
+\section{Acronyms and citations}
+A time-dependent model may take the form of an \gls{ode} or a \gls{dae}.
+Derivatives of computational expressions can be evaluated using \gls{ad}.
+Later uses remain abbreviated: \gls{ode}, \gls{dae}, and \gls{ad}.
+Definitions still belong in the prose, with the lists serving as reference aids.
+
+For a citation example, \textcite{latex-project} describes the LaTeX project.
+Bibliography formatting is provided by \texttt{biblatex}\autocite{biblatex}.
+These documentation references are sample entries to replace with your literature.
+
+\section{An algorithm}
+For fixed \(p\), \cref{alg:newton} illustrates a Newton iteration.
+It assumes each required Jacobian is nonsingular. The returned Boolean records
+whether the requested residual tolerance was achieved; it is not an error bound.
+
+\begin{algorithm}[htbp]
+  \caption{Newton iteration for a fixed parameter vector}
+  \label{alg:newton}
+  \begin{algorithmic}[1]
+    \Require Initial guess \(x_0\), parameter \(p\), tolerance \(\varepsilon>0\), iteration limit \(K\geq1\)
+    \State \(x\gets x_0\)
+    \For{\(k=0,\ldots,K-1\)}
+    \If{\(\norm{F(x,p)}\leq\varepsilon\)}
+    \State \Return \((x,\mathrm{true})\)
+    \EndIf
+    \State Solve \(F_x(x,p)s=-F(x,p)\) for \(s\)
+    \State \(x\gets x+s\)
+    \EndFor
+    \State \Return \((x,\norm{F(x,p)}\leq\varepsilon)\)
+  \end{algorithmic}
+\end{algorithm}
+
+\section{Tables, figures and code}
+The numbers in \cref{tab:example} are illustrative formatting data.
+The table uses horizontal rules and decimal alignment.
+\begin{table}[htbp]
+  \centering
+  \caption{Illustrative numerical values, not experimental results.}
+  \label{tab:example}
+  \begin{tabular}{@{}l S[table-format=1.3] S[table-format=2.1]@{}}
+    \toprule
+    Case & {Residual norm} & {Time (\unit{\milli\second})} \\
+    \midrule
+    A    & 0.125           & 12.4                          \\
+    B    & 0.031           & 18.7                          \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+For a physical quantity, write \(t=\qty{2.5}{\milli\second}\).
+Figure files belong in \texttt{figures/}; the source below is a pattern to use
+once a real figure exists.
+\begin{lstlisting}[language=TeX]
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{convergence.pdf}
+  \caption{Explain what is plotted and why it matters.}
+  \label{fig:convergence}
+\end{figure}
+\end{lstlisting}
+A short source excerpt can be included directly:
+\begin{lstlisting}[language=Python,caption={A scalar residual used only as a syntax example.},label={lst:residual}]
+def residual(x, p):
+    return x*x - p
+\end{lstlisting}
+\Cref{lst:residual} represents \(F(x,p)=x^2-p\).

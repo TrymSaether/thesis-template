@@ -1,0 +1,97 @@
+% Language: british, american, norsk or nynorsk.
+\usepackage[british]{babel}
+\usepackage{fontspec}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+
+\input{config/fonts}
+
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{xcolor}
+\input{config/colors}
+
+% Page layout: the standard report headings are retained.
+\usepackage[margin=28mm,headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\enspace #1}{}}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+\raggedbottom
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% Figures, tables and numerical quantities
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\graphicspath{{figures/}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{siunitx}
+
+% Pseudocode and short code excerpts; remove if unused.
+\usepackage[chapter]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\lstset{basicstyle=\small\ttfamily,columns=fullflexible,
+  keepspaces=true,showstringspaces=false,breaklines=true,
+  frame=lines,captionpos=b,tabsize=4}
+
+% Literature and links
+\usepackage{csquotes}
+\usepackage[backend=biber,style=numeric-comp,sorting=nyt,
+  giveninits=true,maxbibnames=99,doi=true,isbn=false]{biblatex}
+\addbibresource{references.bib}
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  % linkcolor  = ntnu-blue,
+  % citecolor  = ntnu-purple,
+  % urlcolor   = ntnu-sky-dark
+}
+
+\usepackage{bookmark}
+\usepackage[acronym,toc,nonumberlist]{glossaries-extra}
+\makenoidxglossaries
+\setabbreviationstyle[acronym]{long-short}
+\setglossarystyle{list}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+% Shared theorem numbering by chapter. Define after cleveref.
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\crefname{assumption}{assumption}{assumptions}
+\Crefname{assumption}{Assumption}{Assumptions}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+\numberwithin{equation}{chapter}
+
+% Unnumbered chapter with a contents entry and correct running heading.
+\newcommand{\frontchapter}[1]{%
+  \chapter*{#1}\phantomsection
+  \addcontentsline{toc}{chapter}{#1}\markboth{#1}{#1}%
+}

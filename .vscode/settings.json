@@ -1,0 +1,83 @@
+{
+  "[bibtex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.formatOnSave": false,
+    "editor.wordWrap": "on"
+  },
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.formatOnSave": false,
+    "editor.wordWrap": "on"
+  },
+  "files.autoSave": "onFocusChange",
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.DS_Store": true
+  },
+  "files.watcherExclude": {
+    "**/build/**": true
+  },
+  "latex-workshop.chktex.enabled": true,
+  "latex-workshop.chktex.run": "onSave",
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.formatting.latexindent.args": [
+    "-l=%WORKSPACE_FOLDER%/.latexindent.yaml",
+    "%TMPFILE%"
+  ],
+  "latex-workshop.latex.autoBuild.interval": 2000,
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoClean.run": "never",
+  "latex-workshop.latex.auxDir": "%OUTDIR%",
+  "latex-workshop.latex.build.rootfileInStatus": true,
+  "latex-workshop.latex.clean.args": [
+    "-outdir=%OUTDIR%",
+    "-C",
+    "%TEX%"
+  ],
+  "latex-workshop.latex.clean.command": "latexmk",
+  "latex-workshop.latex.clean.method": "command",
+  "latex-workshop.latex.outDir": "%DIR%/build",
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (LuaLaTeX)",
+      "tools": [
+        "latexmk (LuaLaTeX)"
+      ]
+    }
+  ],
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-workshop.latex.search.rootFiles.include": [
+    "main.tex"
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk (LuaLaTeX)",
+      "command": "latexmk",
+      "args": [
+        "-lualatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=%OUTDIR%",
+        "%DOC_EXT%"
+      ]
+    }
+  ],
+  "latex-workshop.message.warning.show": false,
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "ltex.language": "en-GB",
+  "ltex.latex.commands": {
+    "\\gls{}": "dummy",
+    "\\Gls{}": "dummy",
+    "\\cref{}": "dummy",
+    "\\Cref{}": "dummy",
+    "\\autocite{}": "dummy",
+    "\\textcite{}": "dummy"
+  },
+  "search.exclude": {
+    "**/build": true
+  }
+}
