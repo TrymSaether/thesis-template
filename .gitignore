@@ -9,7 +9,7 @@
 build/
 *.pdf
 !figures/*.pdf
-
+!output/*.pdf
 # LaTeX auxiliary files (if built outside build/)
 *.aux
 *.log
